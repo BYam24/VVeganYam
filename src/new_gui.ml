@@ -95,16 +95,19 @@ let fable =
 let after_display () = ignore (W.label "bye")
 
 let main () =
+  
   (* let input = W.text_input ~max_size:200 ~prompt:"Enter your name" () in *)
-  let label = W.label ~size:40 "Hello!" in
+  let label = W.label ~size:25 "Submit" in
 
   let before_survey_display () =
     (* let text = W.get_text input in *)
-    W.set_text label "Questionnaire Time!"
+    W.set_text label "Questionnaire Time!";
   in
 
-  (* let question_one = W.html ~h:20 ("<strong> What are your favorite genres?
-     </strong>") in *)
+
+
+
+
   let check_title =
     W.html ~h:20 "<strong> What are your favorite music genres? </strong>"
   in
@@ -112,6 +115,9 @@ let main () =
   let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Classical" ] in
   let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Rock" ] in
   let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Country" ] in
+
+
+
   let question_1 =
     L.tower ~margins:10 ~sep:0
       [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check4 ]
@@ -120,11 +126,15 @@ let main () =
   let check_title =
     W.html ~h:20 "<strong> What are your favorite eras of music? </strong>"
   in
-  let check1 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "pre-1800s" ] in
+  let check_box_1_1 = W.check_box () in
+  let check1 = L.flat_of_w ~sep:2 [ check_box_1_1; W.label "pre-1800s" ] in
   let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "1850-1900s" ] in
   let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "1900-1950s" ] in
   let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "1950-2000s" ] in
   let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "2000-Present" ] in
+
+  
+  
   let question_2 =
     L.tower ~margins:10 ~sep:0
       [
@@ -137,13 +147,71 @@ let main () =
       ]
   in
 
+  let check_title =
+    W.html ~h:20 "<strong> Do you listen to any these artists? </strong>"
+  in
+  let check1 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Ed Sheeran" ] in
+  let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "The Weekend" ] in
+  let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Taylor Swift" ] in
+  let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Post Malone" ] in
+  let question_3 =
+    L.tower ~margins:10 ~sep:0
+      [
+        L.resident ~w:400 ~h:20 check_title;
+        check1;
+        check2;
+        check4;
+        check5;
+      ]
+  in
+
+  let check_title =
+    W.html ~h:20 "<strong> Which type of music do you prefer for a relaxed evening? </strong>"
+  in
+  let check1 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Jazz" ] in
+  let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Classical" ] in
+  let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "R&B" ] in
+  let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Ambient" ] in
+  
+  let question_4 =
+    L.tower ~margins:10 ~sep:0
+      [
+        L.resident ~w:400 ~h:20 check_title;
+        check1;
+        check2;
+        check3;
+        check5;
+      ]
+  in
+
+  let button_submit =
+    W.button ~border_radius:10 ~kind:Button.Switch "Submit"
+  in
+
+  (* let answers = [] in 
+  
+  let checklist = [L.widget check1; L.widget check2; L.widget check3; L.widget check4 ] in
+
+  let rec get_answers check_list answers = match check_list with 
+  | [] -> ()
+  | h :: t -> if W.get_state h then (ignore(W.get_text h :: answers); get_answers t answers) else get_answers t answers
+
+  in  *)
+  
+  (* W.on_click button_submit (get_answers checklist answers); *)
+
   (* let radio_title = section_title "Radio buttons. Only one can be selected."
      in let radio = Radiolist.vertical [| "select this"; "or rather that";
      "maybe this"; "worst case, this one"; |] in let radio_layout = L.tower
      ~margins:0 ~sep:0 [ radio_title; Radiolist.layout radio ] in *)
   let survey =
-    L.tower [ L.resident ~w:400 ~h:70 label; question_1; question_2 ]
+    L.tower [ L.resident ~w:400 ~h:90 label; question_1; question_2 ;question_3;question_4; L.resident button_submit;]
   in
+
+  
+
+
+
 
   (* let question_1 = "What ?" in let text = W.text_display ~w:width ~h:630
      question_1 in
@@ -336,7 +404,7 @@ let main () =
 
   W.on_click ~click:(fun _ -> Play.load_audio_file ()) play_button;
   let board = Main.make [ c_hello; c_slider; c_button ] [ tabs; survey ] in
-  Main.run ~before_display:before_survey_display board
+  Main.run ~before_display:before_survey_display board 
 
 let () =
   main ();
