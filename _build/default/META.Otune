@@ -1,6 +1,0 @@
-description = ""
-requires = "bogue cmdliner curl graphics lablgtk3 spotify-web-api yojson"
-archive(byte) = "Otunes.cma"
-archive(native) = "Otunes.cmxa"
-plugin(byte) = "Otunes.cma"
-plugin(native) = "Otunes.cmxs"
