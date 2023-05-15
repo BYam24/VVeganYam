@@ -1,5 +1,5 @@
 (* ---- Testing Plan ----*)
-(** This is our project's testing suite. It is composed of over 60 tests
+(** This is our project's testing suite. It is composed of over 80 tests
     excluding tests that were manually disabled to maintain integrity of the
     database and to prevent multiple web pages being opened every time the test
     suite is ran. The test suite encompasses all the functions in the songfuncs
@@ -100,6 +100,16 @@ let genre_by_title_test (name : string) (title : string) (json : Yojson.Basic.t)
     (expected_output : string) : test =
   name >:: fun _ ->
   assert_equal expected_output (genre_by_title title (from_json json))
+
+let date_by_title_test (name : string) (title : string) (json : Yojson.Basic.t)
+    (expected_output : string) : test =
+  name >:: fun _ ->
+  assert_equal expected_output (date_by_title title (from_json json))
+
+let length_by_title_test (name : string) (title : string)
+    (json : Yojson.Basic.t) (expected_output : string) : test =
+  name >:: fun _ ->
+  assert_equal expected_output (length_by_title title (from_json json))
 
 let add_song_test (name : string) (title : string) (artist : string)
     (album : string) (genre : string) (length : string) (date : string)
@@ -319,7 +329,28 @@ let suite =
          artist_by_title_test "for songs2" "likey" songs2 "";
          artist_by_title_test "for songs2" "fancy" songs2 "";
          artist_by_title_test "for songs2" "green light" songs2 "";
-         artist_by_title_test "for songs2" "undefeated" songs2 ""
+         artist_by_title_test "for songs2" "undefeated" songs2 "";
+         length_by_title_test "for songs" "Pompeii" songs "3:34";
+         length_by_title_test "for songs" "Billie Jean" songs "4:54";
+         length_by_title_test "for songs" "What A Wonderful World" songs "2:21";
+         length_by_title_test "for songs" "In Da Club" songs "3:13";
+         length_by_title_test "for songs" "Für Elise" songs "2:55";
+         length_by_title_test "for songs2" "yo" songs2 "";
+         length_by_title_test "for songs2" "what" songs2 "";
+         length_by_title_test "for songs2" "help" songs2 "";
+         length_by_title_test "for songs2" "love" songs2 "";
+         length_by_title_test "for songs2" "what is love" songs2 "";
+         date_by_title_test "for songs" "Pompeii" songs "2013";
+         date_by_title_test "for songs" "Billie Jean" songs "1983";
+         date_by_title_test "for songs" "In Da Club" songs "2003";
+         date_by_title_test "for songs" "Für Elise" songs "1867";
+         date_by_title_test "for songs" "What A Wonderful World" songs "1967";
+         date_by_title_test "for songs2" "hello" songs2 "";
+         date_by_title_test "for songs2" "bro" songs2 "";
+         date_by_title_test "for songs2" "sandwich" songs2 "";
+         date_by_title_test "for songs2" "milk" songs2 "";
+         date_by_title_test "for songs2" "eggs" songs2 "";
+         date_by_title_test "for songs2" "eggs22" songs2 ""
          (* open_url_test "Opens the ytlink for Bastille - Pompeii"
             "https://www.youtube.com/watch?v=F90Cw4l-8NY" (); open_url_test
             "Opens the ytlink for Beethoven - fur elise"

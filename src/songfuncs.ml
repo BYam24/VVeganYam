@@ -91,6 +91,16 @@ let rec genre_by_title title lst =
   | [] -> ""
   | h :: t -> if h.title = title then h.genre else genre_by_title title t
 
+let rec date_by_title title lst =
+  match lst with
+  | [] -> ""
+  | h :: t -> if h.title = title then h.date else date_by_title title t
+
+let rec length_by_title title lst =
+  match lst with
+  | [] -> ""
+  | h :: t -> if h.title = title then h.length else length_by_title title t
+
 let json_with_string title str = to_file title (from_string str)
 let stringify str = {|"|} ^ str ^ {|"|}
 

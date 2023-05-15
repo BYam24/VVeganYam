@@ -52,6 +52,12 @@ val album_by_title : string -> song list -> string
 val genre_by_title : string -> song list -> string
 (** [genre_by_title s j] returns the genre of the song with title s*)
 
+val date_by_title : string -> song list -> string
+(** [date_by_title s j] returns the date of the song with title s*)
+
+val length_by_title : string -> song list -> string
+(** [length_by_title s j] returns the length of the song with title s*)
+
 val json_with_string : string -> string -> unit
 (** [json_with_string s1 s2] creates a new json called [s1] with string [s2]*)
 
