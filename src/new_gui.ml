@@ -3,6 +3,7 @@ module W = Widget
 module L = Layout
 module T = Trigger
 open Tsdl
+open Songfuncs
 
 let section_title s = L.flat_of_w [ W.label ~size:12 ~fg:Draw.(opaque grey) s ]
 
@@ -117,6 +118,15 @@ let fable =
    let board = Bogue.make [] [ layout ] in Bogue.run ~before_display board *)
 let after_display () = ignore (W.label "bye")
 
+let rec get_answers check_list answers =
+  match check_list with
+  | [] -> ()
+  | h :: t ->
+      if W.get_state h then (
+        ignore (W.get_text h :: answers);
+        get_answers t answers)
+      else get_answers t answers
+
 let main () =
   (* let input = W.text_input ~max_size:200 ~prompt:"Enter your name" () in *)
   let label = W.label ~size:25 "Submit" in
@@ -181,7 +191,7 @@ let main () =
   let check1 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Jazz" ] in
   let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Classical" ] in
   let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "R&B" ] in
-  let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Ambient" ] in
+  let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Ambient" ] in
 
   let question_4 =
     L.tower ~margins:10 ~sep:0
@@ -190,23 +200,13 @@ let main () =
 
   let button_submit = W.button ~border_radius:10 ~kind:Button.Switch "Submit" in
 
-  (* let answers = [] in
+  let answers = [] in
 
-     let checklist = [L.widget check1; L.widget check2; L.widget check3;
-     L.widget check4 ] in
+  let checklist =
+    [ L.widget check1; L.widget check2; L.widget check3; L.widget check4 ]
+    (* [ L.widget check1; L.widget check2; L.widget check3; L.widget check4 ] *)
+  in
 
-     let rec get_answers check_list answers = match check_list with | [] -> () |
-     h :: t -> if W.get_state h then (ignore(W.get_text h :: answers);
-     get_answers t answers) else get_answers t answers
-
-     in *)
-
-  (* W.on_click button_submit (get_answers checklist answers); *)
-
-  (* let radio_title = section_title "Radio buttons. Only one can be selected."
-     in let radio = Radiolist.vertical [| "select this"; "or rather that";
-     "maybe this"; "worst case, this one"; |] in let radio_layout = L.tower
-     ~margins:0 ~sep:0 [ radio_title; Radiolist.layout radio ] in *)
   let survey =
     L.tower
       [
@@ -433,9 +433,14 @@ let main () =
     Popup.yesno ~w:100 ~h:50 "Really quit?" ~yes_action ~no_action tabs
   in
   W.on_button_release ~release quit_btn;
+  W.on_click ~click:(fun _ -> get_answers checklist answers) button_submit;
 
   (* W.on_click ~click:(fun _ -> ignore (song_window ())) add_song_button; *)
-  W.on_click ~click:(fun _ -> Play.load_audio_file ()) play_button;
+  W.on_click
+    ~click:(fun _ ->
+      open_url
+        "https://www.youtube.com/watch?v=i0p1bmr0EmE&ab_channel=JYPEntertainment")
+    play_button;
   let board = Main.make [ c_hello; c_slider; c_button ] [ tabs; survey ] in
   Main.run ~before_display:before_survey_display board
 
