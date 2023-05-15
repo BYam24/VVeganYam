@@ -1,5 +1,5 @@
 (* ---- Testing Plan ----*)
-(** This is our project's testing suite. It is composed of over 80 tests
+(** This is our project's testing suite. It is composed of over 90 tests
     excluding tests that were manually disabled to maintain integrity of the
     database and to prevent multiple web pages being opened every time the test
     suite is ran. The test suite encompasses all the functions in the songfuncs
@@ -141,7 +141,8 @@ let to_string_t (name : string) (json : Yojson.Basic.t)
 let suite =
   "test suite for final project, OTunes"
   >::: [
-         to_string_t "" songs2 {|{"songs":[]}|};
+         to_string_t "converts a json into a string for songs2" songs2
+           {|{"songs":[]}|};
          (* string_json_test "TESTING STRING" "t" {| {} |} (); *)
          (* remove_song_test "Removes example song to song json" "extitle"
             "exartist" testing (); remove_song_test "Removes double to song
@@ -207,8 +208,54 @@ let suite =
                "2003",
                "https://www.youtube.com/watch?v=5qm8PH4xAss" );
            ];
+         to_string_list_test "for testing json" testing
+           [
+             ( "Pompeii",
+               "Bastille",
+               "Bad Blood",
+               "Rock",
+               "3:34",
+               "2013",
+               "https://www.youtube.com/watch?v=F90Cw4l-8NY" );
+             ( "Für Elise",
+               "Ludwig van Beethoven",
+               "",
+               "Classical",
+               "2:55",
+               "1867",
+               "https://www.youtube.com/watch?v=c1iZXyWLnXg" );
+             ( "Billie Jean",
+               "Michael Jackson",
+               "Thriller",
+               "Pop",
+               "4:54",
+               "1983",
+               "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" );
+             ( "What A Wonderful World",
+               "Louis Armstrong",
+               "What a Wonderful World",
+               "Jazz",
+               "2:21",
+               "1967",
+               "https://www.youtube.com/watch?v=VqhCQZaH4Vs" );
+             ( "In Da Club",
+               "50 Cent",
+               "Get Rich or Die Tryin'",
+               "Hip Hop",
+               "3:13",
+               "2003",
+               "https://www.youtube.com/watch?v=5qm8PH4xAss" );
+           ];
          to_string_list_test "for songs2" songs2 [];
          title_list_test "for songs" songs
+           [
+             "Pompeii";
+             "Für Elise";
+             "Billie Jean";
+             "What A Wonderful World";
+             "In Da Club";
+           ];
+         title_list_test "for testing json" testing
            [
              "Pompeii";
              "Für Elise";
@@ -219,6 +266,8 @@ let suite =
          title_list_test "for songs2" songs2 [];
          genre_list_test "for songs" songs
            [ "Classical"; "Hip Hop"; "Jazz"; "Pop"; "Rock" ];
+         genre_list_test "for testing json" testing
+           [ "Classical"; "Hip Hop"; "Jazz"; "Pop"; "Rock" ];
          genre_list_test "for songs2" songs2 [];
          album_list_test "for songs" songs
            [
@@ -227,8 +276,23 @@ let suite =
              "What a Wonderful World";
              "Get Rich or Die Tryin'";
            ];
+         album_list_test "for testing json" testing
+           [
+             "Bad Blood";
+             "Thriller";
+             "What a Wonderful World";
+             "Get Rich or Die Tryin'";
+           ];
          album_list_test "for songs2" songs2 [];
          ytlinks_list_test "for songs" songs
+           [
+             "https://www.youtube.com/watch?v=F90Cw4l-8NY";
+             "https://www.youtube.com/watch?v=c1iZXyWLnXg";
+             "https://www.youtube.com/watch?v=Zi_XLOBDo_Y";
+             "https://www.youtube.com/watch?v=VqhCQZaH4Vs";
+             "https://www.youtube.com/watch?v=5qm8PH4xAss";
+           ];
+         ytlinks_list_test "for testing json" testing
            [
              "https://www.youtube.com/watch?v=F90Cw4l-8NY";
              "https://www.youtube.com/watch?v=c1iZXyWLnXg";
@@ -248,6 +312,26 @@ let suite =
                "https://www.youtube.com/watch?v=F90Cw4l-8NY" );
            ];
          song_by_title_test "for songs" "Billie Jean" songs
+           [
+             ( "Billie Jean",
+               "Michael Jackson",
+               "Thriller",
+               "Pop",
+               "4:54",
+               "1983",
+               "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" );
+           ];
+         song_by_title_test "for testing json" "Pompeii" testing
+           [
+             ( "Pompeii",
+               "Bastille",
+               "Bad Blood",
+               "Rock",
+               "3:34",
+               "2013",
+               "https://www.youtube.com/watch?v=F90Cw4l-8NY" );
+           ];
+         song_by_title_test "for testing json" "Billie Jean" testing
            [
              ( "Billie Jean",
                "Michael Jackson",
@@ -279,8 +363,29 @@ let suite =
                "1983",
                "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" );
            ];
+         song_list_by_artist_test "for testing json" "Bastille" testing
+           [
+             ( "Pompeii",
+               "Bastille",
+               "Bad Blood",
+               "Rock",
+               "3:34",
+               "2013",
+               "https://www.youtube.com/watch?v=F90Cw4l-8NY" );
+           ];
+         song_list_by_artist_test "for testing json" "Michael Jackson" testing
+           [
+             ( "Billie Jean",
+               "Michael Jackson",
+               "Thriller",
+               "Pop",
+               "4:54",
+               "1983",
+               "https://www.youtube.com/watch?v=Zi_XLOBDo_Y" );
+           ];
          song_list_by_artist_test "for songs2" "dnjlkd" songs2 [];
          song_list_by_artist_test "for songs2" "lorde" songs2 [];
+         song_list_by_artist_test "for songs2" "drake" songs2 [];
          ytlink_by_title_test "for songs" "Pompeii" songs
            "https://www.youtube.com/watch?v=F90Cw4l-8NY";
          ytlink_by_title_test "for songs" "Billie Jean" songs
