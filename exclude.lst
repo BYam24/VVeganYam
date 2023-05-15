@@ -1,4 +1,5 @@
 _build/*
 tutorial/*
 .DS_Store
+.git*
 *.zip

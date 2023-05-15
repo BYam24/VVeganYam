@@ -20,7 +20,7 @@ play:
 
 zip:
 	rm -f VVeganYam.zip
-	zip -r VVeganYam.zip . -x@exclude.lst
+	zip -r VVeganYam.zip . -x@exclude.lst .git
 
 clean:
 	dune clean
