@@ -241,15 +241,19 @@ let main () =
 
   (* Page 1: check buttons, radio, and text scrolling *)
   let input_title = section_title "Text input" in
-  let ti = W.text_input ~prompt:"What you looking for ? " () in
+  let ti = W.text_input ~prompt:"What you looking for? " () in
   let input =
     L.flat_of_w ~align:Draw.Center [ W.label "Enter your name:"; ti ]
   in
   let input_layout = L.tower ~margins:0 [ input_title; input ] in
 
   let hello_title = section_title "Dynamic text" in
-  let hello = W.label ~size:40 "Hello!" in
-  let hello_action = W.map_text (fun s -> "Hello " ^ s ^ "!") in
+  let hello = W.label ~size:30 "Search Something!" in
+  let hello_action =
+    W.map_text (fun s ->
+        if Util2.is_all_whitespace s || s = "" then "What are you looking for?"
+        else "Looking for \"" ^ s ^ "\"!")
+  in
   let c_hello =
     W.connect ti hello hello_action Sdl.Event.[ text_input; key_down ]
   in
@@ -318,10 +322,13 @@ let main () =
   (* layout *)
   let layout_gui2 =
     L.tower ~margins:0
-      [ section_title "Play button"; L.resident ~w:(width / 8) play_button ]
+      [
+        section_title "Quick Play Button (One time use)";
+        L.resident ~w:(width / 8) play_button;
+      ]
   in
   (******************************************************)
-  let slider_title = section_title "Progress bar or slider" in
+  let slider_title = section_title "Progress bar" in
   let slider = W.slider ~kind:Slider.HBar 100 in
   let percent = W.label "    0%" in
   let set_percent w x = Label.set (W.get_label w) (Printf.sprintf "%u%%" x) in
@@ -338,7 +345,11 @@ let main () =
   let slider_bar = L.flat ~align:Draw.Center [ slider_l; L.resident percent ] in
   let slider_layout = L.tower ~margins:0 [ slider_title; slider_bar ] in
 
-  let buttons_title = section_title "Push and toggle buttons" in
+  let buttons_title =
+    section_title
+      "Push and toggle buttons (don't have localhost open on your browser \
+       until computing completes)"
+  in
   let button_reset = W.button ~border_radius:10 "Reset" in
   let click _ =
     Slider.set (W.get_slider slider) 0;
@@ -346,14 +357,12 @@ let main () =
     (* it would be great if this could be done automatically. *)
   in
   W.on_click ~click button_reset;
-  let button_start =
-    W.button ~border_radius:10 ~kind:Button.Switch "Start computing"
-  in
+  let button_start = W.button ~border_radius:10 ~kind:Button.Switch "Play" in
   let start_action b s ev =
     let bw = W.get_button b in
     let sw = W.get_slider s in
     let state = Button.state bw in
-    if state then
+    if state then (
       let rec loop () =
         let x = Slider.value sw in
         if x >= 100 || T.should_exit ev then (
@@ -366,7 +375,8 @@ let main () =
           T.nice_delay ev 0.1;
           loop ())
       in
-      loop ()
+      loop ();
+      Play.load_audio_file ())
     else W.update percent
   in
   let c_button =

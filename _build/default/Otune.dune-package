@@ -61,9 +61,9 @@
    otunes__Spotify.cmi
    otunes__Spotify.cmt
    otunes__Spotify.cmx
-   otunes__Util.cmi
-   otunes__Util.cmt
-   otunes__Util.cmx
+   otunes__Util2.cmi
+   otunes__Util2.cmt
+   otunes__Util2.cmx
    parse.ml
    play.ml
    play.mli
@@ -74,7 +74,7 @@
    songfuncs.ml
    songfuncs.mli
    spotify.ml
-   util.ml))
+   util2.ml))
  (libexec (Otunes.cmxs))
  (doc (README.md)))
 (library
@@ -152,7 +152,7 @@
       (visibility public)
       (source (path Spotify) (impl (path spotify.ml))))
      (module
-      (obj_name otunes__Util)
+      (obj_name otunes__Util2)
       (visibility public)
-      (source (path Util) (impl (path util.ml))))))
+      (source (path Util2) (impl (path util2.ml))))))
    (wrapped true))))

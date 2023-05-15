@@ -57,9 +57,9 @@ lib: [
   "_build/install/default/lib/Otune/otunes__Spotify.cmi"
   "_build/install/default/lib/Otune/otunes__Spotify.cmt"
   "_build/install/default/lib/Otune/otunes__Spotify.cmx"
-  "_build/install/default/lib/Otune/otunes__Util.cmi"
-  "_build/install/default/lib/Otune/otunes__Util.cmt"
-  "_build/install/default/lib/Otune/otunes__Util.cmx"
+  "_build/install/default/lib/Otune/otunes__Util2.cmi"
+  "_build/install/default/lib/Otune/otunes__Util2.cmt"
+  "_build/install/default/lib/Otune/otunes__Util2.cmx"
   "_build/install/default/lib/Otune/parse.ml"
   "_build/install/default/lib/Otune/play.ml"
   "_build/install/default/lib/Otune/play.mli"
@@ -70,7 +70,7 @@ lib: [
   "_build/install/default/lib/Otune/songfuncs.ml"
   "_build/install/default/lib/Otune/songfuncs.mli"
   "_build/install/default/lib/Otune/spotify.ml"
-  "_build/install/default/lib/Otune/util.ml"
+  "_build/install/default/lib/Otune/util2.ml"
 ]
 libexec: [
   "_build/install/default/lib/Otune/Otunes.cmxs"

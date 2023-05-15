@@ -1,4 +1,4 @@
-open Util
+open Util2
 (* give each musi*)
 
 (** [minmax lst] is [Some (min, max)] if [min] is the smallest number in [lst]
@@ -28,7 +28,7 @@ let rank_songs playlist user_genre =
       String.length song.artist |> float_of_int |> ( *. ) 0.15
     in
     let genre_score =
-      if compare_caseless song.genre user_genre = 0 then 10. else 0.
+      if compare_string_caseless song.genre user_genre = 0 then 10. else 0.
     in
     let duration_score = song.duration *. 0.1 in
     title_score +. artist_score +. duration_score +. genre_score

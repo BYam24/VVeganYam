@@ -39,5 +39,5 @@ module Songfuncs = Otunes__Songfuncs
 (** @canonical Otunes.Spotify *)
 module Spotify = Otunes__Spotify
 
-(** @canonical Otunes.Util *)
-module Util = Otunes__Util
+(** @canonical Otunes.Util2 *)
+module Util2 = Otunes__Util2
