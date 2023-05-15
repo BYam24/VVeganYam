@@ -60,6 +60,21 @@ opam install -y lame shine
 You can find Bogue documentation here:
 https://garrigue.github.io/lablgtk/refdoc/index.html
 
+# Troubleshooting
+
+Make sure you opam is updated.
+If building of conf-libssl fails, run:
+
+```
+opam depext -i conf-libssl
+```
+
+If you have dependecies error try running:
+
+```
+opam install lwt cohttp cohttp-lwt-unix yojson
+```
+
 # Run Otunes
 
 After all dependencies are successfully installed, you can run the gui.

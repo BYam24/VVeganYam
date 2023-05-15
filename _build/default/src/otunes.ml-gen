@@ -24,6 +24,9 @@ module Play = Otunes__Play
 (** @canonical Otunes.Playlist *)
 module Playlist = Otunes__Playlist
 
+(** @canonical Otunes.Popup *)
+module Popup = Otunes__Popup
+
 (** @canonical Otunes.Ranking *)
 module Ranking = Otunes__Ranking
 

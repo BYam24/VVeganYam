@@ -21,66 +21,89 @@ let song_title = "What is Love? - Twice"
 let song_ref = "April 9th, 2018"
 
 let fable =
-  "Twice!\n\
+  "Every day, in a movie\n\
+   In a book or in a drama, I feel love\n\
+   Um- I learn about love\n\
+   My heart keeps beating as if it's my own story\n\
+   Makes my heart pound and swell with hope\n\
+   Um- I want to know so bad\n\n\
+   [Pre-Chorus: Mina, Chaeyoung]\n\
+   Ooh, maybe someday\n\
+   Could it happen to me too?\n\
+   When will it be? Who will it be?\n\n\
+   [Chorus: Sana, Tzuyu]\n\
+   (I wanna know) How it could be as sweet as candy?\n\
+   (I wanna know) How it's like flying in the sky?\n\
+   I wanna know know know know\n\
    What is love?\n\
-   매일같이 영화 속에서나\n\
-   책 속에서나 드라마 속에서 사랑을 느껴\n\
-   Mmm 사랑을 배워\n\
-   내 일처럼 자꾸 가슴이 뛰어 두근두근거려\n\
-   설레임에 부풀어 올라\n\
-   Mmm 궁금해서 미칠 것만 같아\n\
-   Ooh 언젠간 내게도\n\
-   이런 일이 실제로 일어날까\n\
-   그게 언제쯤일까? 어떤 사람일까?\n\
-   I wanna know 사탕처럼 달콤하다는데\n\
-   I wanna know 하늘을 나는 것 같다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 사랑이 어떤 느낌인지\n\
-   I wanna know 하루 종일 웃고 있다는데\n\
-   I wanna know 세상이 다 아름답다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 언젠간 나에게도 사랑이 올까\n\
-   지금 이런 상상만으로도\n\
-   떠올려만 봐도 가슴이 터질 것 같은데\n\
-   Mmm 이렇게 좋은데\n\
-   만일 언젠가 진짜로 내게\n\
-   사랑이 올 때 난 울어버릴지도 몰라\n\
-   Mmm 정말 궁금해 미칠 것만 같아\n\
-   Ooh 언젠간 내게도\n\
-   이런 일이 실제로 일어날까\n\
-   Ooh, ooh, ooh 그게 언제쯤일까? 어떤 사람일까?\n\
-   I wanna know 사탕처럼 달콤하다는데\n\
-   I wanna know 하늘을 나는 것 같다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 사랑이 어떤 느낌인지\n\
-   I wanna know 하루 종일 웃고 있다는데\n\
-   I wanna know 세상이 다 아름답다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 언젠간 나에게도 사랑이 올까\n\
-   지금 세상 어느 곳에 살고 있는지\n\
-   도대체 언제쯤 나와 만나게 될런지\n\
-   언제 우리의 인연은 시작될런지 모르지만 느낌이 어쩐지\n\
-   진 진 진짜 좋을 것 같아 왠지\n\
-   영화 드라마보다도 더 멋진\n\
-   사랑이 올 거야 내 예감 언제나 맞지\n\
-   어서 나타나봐 나는 다 준비가 됐지 ready!\n\
-   찾아낼 거야\n\
-   (어디 있을까) 보고 싶어 죽겠어\n\
-   더 이상 참을 수 없을 것만 같아\n\
-   사탕처럼 달콤하다는데\n\
-   하늘을 나는 것 같다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 사랑이 어떤 느낌인지\n\
-   하루 종일 웃고 있다는데\n\
-   세상이 다 아름답다는데\n\
-   I wanna know, know, know, know\n\
-   What is love? 언젠간 나에게도 사랑이 올까\n\
-   I wanna know, I wanna know\n\
-   I wanna know, know, know, know\n\
+   What love feels like?\n\
+   (I wanna know) How it keeps you smiling all day?\n\
+   (I wanna know) How the whole world turns beautiful?\n\
+   I wanna know know know know\n\
    What is love?\n\
-   I wanna know, I wanna know\n\
-   I wanna know, I wanna know\n\
-   I wanna know, know, know, know\n\
+   Will love come to me someday?\n\
+   You might also like\n\
+   Cupid (Twin Version)\n\
+   FIFTY FIFTY (피프티피프티)\n\
+   Die For You (Remix)\n\
+   The Weeknd & Ariana Grande\n\
+   Boy’s a liar Pt. 2\n\
+   PinkPantheress & Ice Spice\n\
+   Just imagining all of this\n\
+   Just thinking about it\n\
+   Almost makes my heart burst\n\
+   Um- How good it feels?\n\
+   If, one day, for real\n\
+   Love does comes to me, I might just cry\n\
+   Um- I really want to know how it feels\n\n\
+   [Pre-Chorus: Mina, Dahyun]\n\
+   Ooh, maybe someday\n\
+   Could it happen to me too?\n\
+   When will it be? Who will it be?\n\n\
+   [Chorus: Sana, Tzuyu]\n\
+   (I wanna know) How it could be as sweet as candy?\n\
+   (I wanna know) How it's like flying in the sky?\n\
+   I wanna know know know know\n\
+   What is love?\n\
+   What love feels like?\n\
+   (I wanna know) How it keeps you smiling all day?\n\
+   (I wanna know) How the whole world turns beautiful?\n\
+   I wanna know know know know\n\
+   What is love?\n\
+   Will love come to me someday?\n\n\
+   [Verse 3: Dahyun, Chaeyoung]\n\
+   Where in the world are you right now?\n\
+   Just when will we get to meet each other?\n\
+   When and how might our relationship start?\n\
+   I don't know right now, but somehow I feel\n\
+   That it will be really good\n\
+   Better than any movie or drama\n\
+   The greatest love will come\n\
+   My gut instinct is always right\n\
+   C'mon, show yourself, i'm all set, Ready!\n\
+   [Bridge: Sana, Jeongyeon, Nayeon]\n\
+   (wonder where you are) I'm gonna find you\n\
+   (wonder where you are) I'm so dying to see you\n\
+   I can't take it much longer\n\n\
+   How it could be as sweet as candy?\n\
+   How it's like flying in the sky?\n\
+   I wanna know know know know\n\
+   What is love?\n\
+   What love feels like?\n\
+   How it keeps you smiling all day?\n\
+   How the whole world turns beautiful?\n\
+   I wanna know know know know\n\
+   What is love?\n\
+   Will love come to me someday?\n\n\
+   [Outro: Sana, Tzuyu, All]\n\
+   I wanna know\n\
+   I wanna know\n\
+   I wanna know know know know\n\
+   What is love?\n\
+   I wanna know I wanna know\n\
+   I wanna know\n\
+   I wanna know\n\
+   I wanna know know know know\n\
    What is love?\n\
    I wanna know"
 
@@ -95,18 +118,13 @@ let fable =
 let after_display () = ignore (W.label "bye")
 
 let main () =
-  
   (* let input = W.text_input ~max_size:200 ~prompt:"Enter your name" () in *)
   let label = W.label ~size:25 "Submit" in
 
   let before_survey_display () =
     (* let text = W.get_text input in *)
-    W.set_text label "Questionnaire Time!";
+    W.set_text label "Questionnaire Time!"
   in
-
-
-
-
 
   let check_title =
     W.html ~h:20 "<strong> What are your favorite music genres? </strong>"
@@ -115,8 +133,6 @@ let main () =
   let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Classical" ] in
   let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Rock" ] in
   let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Country" ] in
-
-
 
   let question_1 =
     L.tower ~margins:10 ~sep:0
@@ -133,8 +149,6 @@ let main () =
   let check4 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "1950-2000s" ] in
   let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "2000-Present" ] in
 
-  
-  
   let question_2 =
     L.tower ~margins:10 ~sep:0
       [
@@ -156,48 +170,37 @@ let main () =
   let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Post Malone" ] in
   let question_3 =
     L.tower ~margins:10 ~sep:0
-      [
-        L.resident ~w:400 ~h:20 check_title;
-        check1;
-        check2;
-        check4;
-        check5;
-      ]
+      [ L.resident ~w:400 ~h:20 check_title; check1; check2; check4; check5 ]
   in
 
   let check_title =
-    W.html ~h:20 "<strong> Which type of music do you prefer for a relaxed evening? </strong>"
+    W.html ~h:20
+      "<strong> Which type of music do you prefer for a relaxed evening? \
+       </strong>"
   in
   let check1 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Jazz" ] in
   let check2 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Classical" ] in
   let check3 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "R&B" ] in
   let check5 = L.flat_of_w ~sep:2 [ W.check_box (); W.label "Ambient" ] in
-  
+
   let question_4 =
     L.tower ~margins:10 ~sep:0
-      [
-        L.resident ~w:400 ~h:20 check_title;
-        check1;
-        check2;
-        check3;
-        check5;
-      ]
+      [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check5 ]
   in
 
-  let button_submit =
-    W.button ~border_radius:10 ~kind:Button.Switch "Submit"
-  in
+  let button_submit = W.button ~border_radius:10 ~kind:Button.Switch "Submit" in
 
-  (* let answers = [] in 
-  
-  let checklist = [L.widget check1; L.widget check2; L.widget check3; L.widget check4 ] in
+  (* let answers = [] in
 
-  let rec get_answers check_list answers = match check_list with 
-  | [] -> ()
-  | h :: t -> if W.get_state h then (ignore(W.get_text h :: answers); get_answers t answers) else get_answers t answers
+     let checklist = [L.widget check1; L.widget check2; L.widget check3;
+     L.widget check4 ] in
 
-  in  *)
-  
+     let rec get_answers check_list answers = match check_list with | [] -> () |
+     h :: t -> if W.get_state h then (ignore(W.get_text h :: answers);
+     get_answers t answers) else get_answers t answers
+
+     in *)
+
   (* W.on_click button_submit (get_answers checklist answers); *)
 
   (* let radio_title = section_title "Radio buttons. Only one can be selected."
@@ -205,13 +208,16 @@ let main () =
      "maybe this"; "worst case, this one"; |] in let radio_layout = L.tower
      ~margins:0 ~sep:0 [ radio_title; Radiolist.layout radio ] in *)
   let survey =
-    L.tower [ L.resident ~w:400 ~h:90 label; question_1; question_2 ;question_3;question_4; L.resident button_submit;]
+    L.tower
+      [
+        L.resident ~w:400 ~h:90 label;
+        question_1;
+        question_2;
+        question_3;
+        question_4;
+        L.resident button_submit;
+      ]
   in
-
-  
-
-
-
 
   (* let question_1 = "What ?" in let text = W.text_display ~w:width ~h:630
      question_1 in
@@ -404,7 +410,7 @@ let main () =
 
   W.on_click ~click:(fun _ -> Play.load_audio_file ()) play_button;
   let board = Main.make [ c_hello; c_slider; c_button ] [ tabs; survey ] in
-  Main.run ~before_display:before_survey_display board 
+  Main.run ~before_display:before_survey_display board
 
 let () =
   main ();
