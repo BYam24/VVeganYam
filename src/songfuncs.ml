@@ -1,6 +1,5 @@
 open Yojson.Basic
 open Yojson.Basic.Util
-(* open Curl *)
 
 type song = {
   title : string;
@@ -82,6 +81,16 @@ let rec artist_by_title title lst =
   | [] -> ""
   | h :: t -> if h.title = title then h.artist else artist_by_title title t
 
+let rec album_by_title title lst =
+  match lst with
+  | [] -> ""
+  | h :: t -> if h.title = title then h.album else album_by_title title t
+
+let rec genre_by_title title lst =
+  match lst with
+  | [] -> ""
+  | h :: t -> if h.title = title then h.genre else genre_by_title title t
+
 let json_with_string title str = to_file title (from_string str)
 let stringify str = {|"|} ^ str ^ {|"|}
 
@@ -114,7 +123,9 @@ let remove_song_to_json ti ar lst =
         (List.nth lst i).album (List.nth lst i).genre (List.nth lst i).length
         (List.nth lst i).date (List.nth lst i).ytlink
   done;
-  to_file "SongList" (Yojson.Basic.from_file "SongListAux")
+  to_file "SongList" (Yojson.Basic.from_file "SongListAux");
+  to_file "SongListAux" (from_string {|{"songs":[]}|})
+
 (* Copies the temperary json to real json*)
 
 let open_url url =

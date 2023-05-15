@@ -1,3 +1,3 @@
 (executable
- (name main)
+ (name test)
  (libraries Otune ounit2 yojson))

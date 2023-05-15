@@ -45,6 +45,13 @@ val ytlink_by_title : string -> song list -> string
 val artist_by_title : string -> song list -> string
 (** [artist_by_title s j] returns the artist of the song with title s*)
 
+val album_by_title : string -> song list -> string
+(** [album_by_title s j] returns the album of the song with title s. Returns an
+    empty string if the song is a single.*)
+
+val genre_by_title : string -> song list -> string
+(** [genre_by_title s j] returns the genre of the song with title s*)
+
 val json_with_string : string -> string -> unit
 (** [json_with_string s1 s2] creates a new json called [s1] with string [s2]*)
 
