@@ -127,6 +127,3 @@ let open_url url =
   in
   let _ = Sys.command command in
   ()
-
-let url = "https://www.example.com"
-let () = open_url url

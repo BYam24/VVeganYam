@@ -4,7 +4,7 @@ This project seeks to build an audio player application and draws much of its na
 
 This repository is currently in development.
 
-[Temporary notes from Wilson: Install ocurl,sudo apt-get install xdg-utils, wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb, sudo dpkg -i google-chrome-stable_current_amd64.deb, sudo apt-get install -f]
+[Temporary notes from Wilson:]
 
 # Initial Requirements
 
