@@ -71,8 +71,9 @@ let remove_song_test (name : string) (title : string) (artist : string)
    (expected_output : unit) : test = name >:: fun _ -> assert_equal
    expected_output (json_with_string title str) *)
 
-(* let open_url_test (name : string) (url : string) (expected_output : unit) :
-   test = name >:: fun _ -> assert_equal expected_output (open_url url) *)
+let open_url_test (name : string) (url : string) (expected_output : unit) : test
+    =
+  name >:: fun _ -> assert_equal expected_output (open_url url)
 
 let printers str = str
 
@@ -184,9 +185,9 @@ let suite =
            "https://www.youtube.com/watch?v=F90Cw4l-8NY";
          ytlink_by_title_test "for songs2" "dsafds" songs2 "";
          artist_by_title_test "for songs" "Pompeii" songs "Bastille";
-         artist_by_title_test "for songs2" "wrqwewq" songs2 ""
-         (* open_url_test "Opens the ytlink for Bastille - Pompeii"
-            "https://www.youtube.com/watch?v=F90Cw4l-8NY" (); *);
+         artist_by_title_test "for songs2" "wrqwewq" songs2 "";
+         open_url_test "Opens the ytlink for Bastille - Pompeii"
+           "https://www.youtube.com/watch?v=F90Cw4l-8NY" ();
        ]
 
 let _ = run_test_tt_main suite

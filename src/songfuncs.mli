@@ -60,3 +60,5 @@ val remove_song_to_json : string -> string -> song list -> unit
 (*val modify_song_to_json : *)
 
 val open_url : string -> unit
+(** [open_url url] opens the url provided as a string [url] in the default web
+    browser of Windows and MacOS operating systems.*)
