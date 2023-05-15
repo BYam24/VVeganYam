@@ -51,7 +51,7 @@ Then install what is recommened by copy and pasting below into terminal:
 opam install -y mad ffmpeg cry taglib fdkaac
 ```
 
-liquidsoap might recommend installing the packages lame and shine. You may do so, however it is not needed.
+liquidsoap might recommend installing the packages lame and shine. You may do so, however it is may or may not be needed.
 
 ```
 opam install -y lame shine

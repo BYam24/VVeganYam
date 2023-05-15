@@ -7,11 +7,11 @@
    Otunes.a
    Otunes.cma
    Otunes.cmxa
-   demo.ml
    dune-package
    gui.ml
    gui.mli
    gui2.ml
+   gui_app.ml
    main.ml
    new_gui.ml
    opam
@@ -19,9 +19,6 @@
    otunes.cmt
    otunes.cmx
    otunes.ml
-   otunes__Demo.cmi
-   otunes__Demo.cmt
-   otunes__Demo.cmx
    otunes__Gui.cmi
    otunes__Gui.cmt
    otunes__Gui.cmti
@@ -29,6 +26,9 @@
    otunes__Gui2.cmi
    otunes__Gui2.cmt
    otunes__Gui2.cmx
+   otunes__Gui_app.cmi
+   otunes__Gui_app.cmt
+   otunes__Gui_app.cmx
    otunes__Main.cmi
    otunes__Main.cmt
    otunes__Main.cmx
@@ -97,10 +97,6 @@
     (name Otunes)
     (modules
      (module
-      (obj_name otunes__Demo)
-      (visibility public)
-      (source (path Demo) (impl (path demo.ml))))
-     (module
       (obj_name otunes__Gui)
       (visibility public)
       (source (path Gui) (intf (path gui.mli)) (impl (path gui.ml))))
@@ -108,6 +104,10 @@
       (obj_name otunes__Gui2)
       (visibility public)
       (source (path Gui2) (impl (path gui2.ml))))
+     (module
+      (obj_name otunes__Gui_app)
+      (visibility public)
+      (source (path Gui_app) (impl (path gui_app.ml))))
      (module
       (obj_name otunes__Main)
       (visibility public)
