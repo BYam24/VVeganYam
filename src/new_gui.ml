@@ -406,10 +406,26 @@ let main () =
         hline width (* bottom; *);
       ]
   in
+  let add_song_button = icon_button "plus" in
+  let remove_song_button = icon_button "minus" in
+  let button1 = W.button "pompeii" in
+  let button2 = W.button "Drake" in
 
+  let song_button_layout =
+    L.tower ~margins:0
+      [
+        L.flat_of_w [ add_song_button; remove_song_button ];
+        L.tower_of_w [ button1; button2 ];
+      ]
+  in
+  let page3 = L.tower [ song_button_layout ] in
   let tabs =
     Tabs.create ~slide:Avar.Right
-      [ ("Artist descriptions", page1); ("Music Playing", page2) ]
+      [
+        ("Artist descriptions", page1);
+        ("Music Playing", page2);
+        ("Library", page3);
+      ]
   in
 
   (* Notice we need to put this code after definition of the main layout. *)
@@ -418,6 +434,7 @@ let main () =
   in
   W.on_button_release ~release quit_btn;
 
+  (* W.on_click ~click:(fun _ -> ignore (song_window ())) add_song_button; *)
   W.on_click ~click:(fun _ -> Play.load_audio_file ()) play_button;
   let board = Main.make [ c_hello; c_slider; c_button ] [ tabs; survey ] in
   Main.run ~before_display:before_survey_display board
