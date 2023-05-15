@@ -195,18 +195,16 @@ let main () =
 
   let question_4 =
     L.tower ~margins:10 ~sep:0
-      [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check5 ]
+      [ L.resident ~w:400 ~h:20 check_title; check1; check2; check3; check4 ]
   in
 
   let button_submit = W.button ~border_radius:10 ~kind:Button.Switch "Submit" in
 
-  let answers = [] in
+  (* let _answers = [] in
 
-  let checklist =
-    [ L.widget check1; L.widget check2; L.widget check3; L.widget check4 ]
-    (* [ L.widget check1; L.widget check2; L.widget check3; L.widget check4 ] *)
-  in
-
+     let _checklist = [ L.widget check1; L.widget check2; L.widget check3;
+     L.widget check4 ] *)
+  (* [ L.widget check1; L.widget check2; L.widget check3; L.widget check4 ] *)
   let survey =
     L.tower
       [
@@ -430,7 +428,9 @@ let main () =
     Popup.yesno ~w:100 ~h:50 "Really quit?" ~yes_action ~no_action tabs
   in
   W.on_button_release ~release quit_btn;
-  W.on_click ~click:(fun _ -> get_answers checklist answers) button_submit;
+
+  (* W.on_click ~click:(fun _ -> get_answers checklist answers)
+     button_submit; *)
 
   (* W.on_click ~click:(fun _ -> ignore (song_window ())) add_song_button; *)
   W.on_click
