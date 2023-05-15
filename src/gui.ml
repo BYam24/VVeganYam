@@ -75,6 +75,4 @@ let main () =
   window#show ();
   GMain.Main.main ()
 
-
-
 let () = main ()

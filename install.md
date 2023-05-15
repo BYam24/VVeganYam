@@ -4,8 +4,6 @@ This project seeks to build an audio player application and draws much of its na
 
 This repository is currently in development.
 
-[Temporary notes from Wilson:]
-
 # Initial Requirements
 
 Please install the following:
@@ -62,7 +60,7 @@ https://garrigue.github.io/lablgtk/refdoc/index.html
 
 # Troubleshooting
 
-Make sure you opam is updated.
+Make sure your opam is updated.
 If building of conf-libssl fails, run:
 
 ```
@@ -171,14 +169,14 @@ You should get output like this:
 Continue by install ocaml packages we need:
 
 ```
-opam install -y utop odoc ounit2 qcheck bisect_ppx menhir ocaml-lsp-server ocamlformat ocamlformat-rpc bogue lablgtk
+opam install -y utop odoc ounit2 qcheck bisect_ppx menhir ocaml-lsp-server ocamlformat ocamlformat-rpc bogue lablgtk yojson cmdliner
 ```
 
 [Continue with the remaining installation steps](#Continue)
 
 <a name="Windows"></a>
 
-### Windows
+# Windows
 
 Unix development in Windows is made possible by the Windows Subsystem for Linux (WSL). If you have a recent version of Windows (build 20262, released November 2020, or newer), WSL is easy to install. If you don’t have that recent of a version, try running Windows Update to get it.
 

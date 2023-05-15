@@ -322,10 +322,7 @@ let main () =
   (* layout *)
   let layout_gui2 =
     L.tower ~margins:0
-      [
-        section_title "Quick Play Button (One time use)";
-        L.resident ~w:(width / 8) play_button;
-      ]
+      [ section_title "Open Youtube"; L.resident ~w:(width / 8) play_button ]
   in
   (******************************************************)
   let slider_title = section_title "Progress bar" in
@@ -347,8 +344,8 @@ let main () =
 
   let buttons_title =
     section_title
-      "Push and toggle buttons (don't have localhost open on your browser \
-       until computing completes)"
+      "Play with liquidsoap (While computing play with the gui then open \
+       localhost)"
   in
   let button_reset = W.button ~border_radius:10 "Reset" in
   let click _ =
